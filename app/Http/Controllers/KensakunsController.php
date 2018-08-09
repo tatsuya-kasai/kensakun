@@ -44,9 +44,21 @@ class KensakunsController extends Controller
      */
     public function store(Request $request)
     {
-        $aaa = new Kensakun;
-        $aaa->content = $request->content;
-        $aaa->save();
+        $this->validate($request, [
+            'sex' => 'required|max:5',   // 追加
+            'content' => 'required|max:20',
+            'birth' => 'required|max:20',   // 追加
+            'age' => 'required|max:3',   // 追加
+            'hobby' => 'required|max:20',   // 追加
+        ]);
+        
+        $kensakun = new Kensakun;
+        $kensakun->sex = $request->sex;    // 追加
+        $kensakun->content = $request->content;
+        $kensakun->birth = $request->birth;    // 追加
+        $kensakun->age = $request->age;    // 追加
+        $kensakun->hobby = $request->hobby;    // 追加
+        $kensakun->save();
 
         return redirect('/');
     }
@@ -90,8 +102,20 @@ class KensakunsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'sex' => 'required|max:5',   // 追加
+            'content' => 'required|max:20',
+            'birth' => 'required|max:20',   // 追加
+            'age' => 'required|max:3',   // 追加
+            'hobby' => 'required|max:20',   // 追加
+        ]);
+        
         $kensakun = Kensakun::find($id);
+        $kensakun->sex = $request->sex;    // 追加
         $kensakun->content = $request->content;
+        $kensakun->birth = $request->birth;    // 追加
+        $kensakun->age = $request->age;    // 追加
+        $kensakun->hobby = $request->hobby;    // 追加
         $kensakun->save();
 
         return redirect('/');
