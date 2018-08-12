@@ -9,6 +9,10 @@
             {!! Form::model($kensakun, ['route' => 'kensakuns.store']) !!}
 
             <div class="form-group">
+                {!! Form::label('room', '居室番号:') !!}
+                {!! Form::text('room', null, ['class' => 'form-control']) !!}
+            </div>
+            <div class="form-group">
                 {!! Form::label('sex', '性別:') !!}
                 {!! Form::text('sex', null, ['class' => 'form-control']) !!}
             </div>
@@ -28,8 +32,12 @@
                 {!! Form::label('hobby', '趣味:') !!}
                 {!! Form::text('hobby', null, ['class' => 'form-control']) !!}
             </div>
+            <div class="form-group">
+                {!! Form::label('adl', 'ADL:') !!}
+                {!! Form::text('adl', null, ['class' => 'form-control']) !!}
+            </div>
 
-            {!! Form::submit('登録', ['class' => 'btn btn-primary']) !!}
+            {!! Form::submit('登録', ['class' => 'btn btn-primary btn-lg']) !!}
 
         {!! Form::close() !!}
     </div>

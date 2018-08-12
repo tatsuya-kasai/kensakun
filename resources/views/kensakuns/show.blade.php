@@ -2,12 +2,13 @@
 
 @section('content')
 
-    <h1>居室番号 = {{ $kensakun->id }} 号室の入居者詳細ページ</h1>
+    <h1>居室番号 = {{ $kensakun->room }} 号室の入居者詳細</h1>
 
     <table class="table table-bordered">
+
         <tr>
             <th>居室番号</th>
-            <td>{{ $kensakun->id }}</td>
+            <td>{{ $kensakun->room }}</td>
         </tr>
         <tr>
             <th>性別</th>
@@ -29,9 +30,13 @@
             <th>趣味</th>
             <td>{{ $kensakun->hobby }}</td>
         </tr>
+        <tr>
+            <th>ADL</th>
+            <td>{{ $kensakun->adl }}</td>
+        </tr>
     </table>
     
-     {!! link_to_route('kensakuns.edit', 'この入居者情報を編集', ['id' => $kensakun->id], ['class' => 'btn btn-default']) !!}
+     {!! link_to_route('kensakuns.edit', 'この入居者情報を編集', ['id' => $kensakun->id], ['class' => 'btn btn-warning btn-lg']) !!}
      
      {!! Form::model($kensakun, ['route' => ['kensakuns.destroy', $kensakun->id], 'method' => 'delete']) !!}
         {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}

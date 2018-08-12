@@ -8,8 +8,8 @@
         <div class="center jumbotron">
             <div class="text-center">
                 <h1>けんさくん</h1>
-                <h3>入居者情報をいっぱつキャッチ！！くん</h3>
-                {!! link_to_route('signup.get', 'Sign up now!', null, ['class' => 'btn btn-lg btn-primary']) !!}
+                <h3>入居者情報をいっぱつキャッチ！！</h3>
+                {!! link_to_route('login.get', 'ログインしましょう！！!', null, ['class' => 'btn btn-lg btn-primary']) !!}
             </div>
         </div>
     @endif
