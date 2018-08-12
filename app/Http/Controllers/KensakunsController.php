@@ -15,11 +15,21 @@ class KensakunsController extends Controller
      */
     public function index()
     {
-        $kensakuns = Kensakun::all();
-
-        return view('kensakuns.index', [
-            'kensakuns' => $kensakuns,
-        ]);
+        $data = [];
+        if (\Auth::check()) {
+            $user = \Auth::user();
+            //if 部屋番号
+            $kensakuns = Kensakun::orderBy('room', 'ASC')->paginate(10);
+            // else { where
+            
+            $data = [
+                'user' => $user,
+                'kensakuns' => $kensakuns,
+            ];
+            return view('kensakuns.index', $data);
+        }else {
+            return view('welcome');
+        }
     }
 
     /**
