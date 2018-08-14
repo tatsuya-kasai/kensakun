@@ -21,7 +21,7 @@
                 {!! Form::text('content', null, ['class' => 'form-control']) !!}
             </div>
             <div class="form-group">
-                {!! Form::label('birth', '生年月日:') !!}
+                {!! Form::label('birth', '生年月日:　記入例(1944/10/09)') !!}
                 {!! Form::text('birth', null, ['class' => 'form-control']) !!}
             </div>
             <div class="form-group">

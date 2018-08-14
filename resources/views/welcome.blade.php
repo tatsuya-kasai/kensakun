@@ -9,7 +9,7 @@
             <div class="text-center">
                 <h1>けんさくん</h1>
                 <h3>入居者情報をいっぱつキャッチ！！</h3>
-                {!! link_to_route('login', 'ログインしましょう！！!', null, ['class' => 'btn btn-lg btn-primary']) !!}
+                {!! link_to_route('login', '☆ログインしましょう☆', null, ['class' => 'btn btn-lg btn-success btn-lg btn-block']) !!}
             </div>
         </div>
     @endif
