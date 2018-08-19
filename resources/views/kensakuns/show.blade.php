@@ -24,15 +24,21 @@
         </tr>
         <tr>
             <th>年齢</th>
-            <td>{{ $kensakun->age }}</td>
+            <td>
+            <?php
+                $now = date('Ymd');
+                $birth = str_replace("/", "", $kensakun->birth);//追加分
+                print "".floor(($now-$birth)/10000);
+            ?>
+</td>
         </tr>
         <tr>
             <th>趣味</th>
-            <td>{{ $kensakun->hobby }}</td>
+            <td class="danger">{{ $kensakun->hobby }}</td>
         </tr>
         <tr>
             <th>ADL</th>
-            <td>{{ $kensakun->adl }}</td>
+            <td class="info">{{ $kensakun->adl }}</td>
         </tr>
     </table>
     

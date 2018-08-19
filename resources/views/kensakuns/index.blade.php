@@ -3,23 +3,22 @@
 @section('content')
 
     <h1>入居者一覧</h1>
+    
     <img src="{{ secure_asset("images/logo2.png") }}"
-    <h2><u>詳細はID番号をクリック！！</u></h2>
+    <h1><u>入居者の詳細は居室番号をクリック！！</u></h1>
     @if (count($kensakuns) > 0)
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>居室番号</th>
-                    <th>性別</th>
-                    <th>氏名</th>
+                    <th><h4>居室番号</h4></th>
+                    <th><h3>性別</h3></th>
+                    <th><h3>氏名</h3></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($kensakuns as $kensakun)
                     <tr>
-                        <td>{!! link_to_route('kensakuns.show', $kensakun->id, ['id' => $kensakun->id]) !!}</td>
-                        <td>{{ $kensakun->room }}</td>
+                        <td>{!! link_to_route('kensakuns.show', $kensakun->room, ['id' => $kensakun->id]) !!}</td>
                         <td>{{ $kensakun->sex }}</td>
                         <td>{{ $kensakun->content }}</td>
                     </tr>

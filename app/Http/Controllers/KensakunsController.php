@@ -13,6 +13,8 @@ class KensakunsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     
+    
     public function index()
     {
         $data = [];
@@ -57,8 +59,7 @@ class KensakunsController extends Controller
         $this->validate($request, [
             'sex' => 'required|max:5',   // 追加
             'content' => 'required|max:20',
-            'birth' => 'required|max:20',   // 追加
-            'age' => 'required|max:3',   // 追加
+            'birth' => 'required|max:20|date_format:"Y/m/d',   // 追加
             'hobby' => 'required|max:20',   // 追加
             'adl' => 'required|max:30',   // 追加
         ]);
@@ -68,7 +69,6 @@ class KensakunsController extends Controller
         $kensakun->sex = $request->sex;    // 追加
         $kensakun->content = $request->content;
         $kensakun->birth = $request->birth;    // 追加
-        $kensakun->age = $request->age;    // 追加
         $kensakun->hobby = $request->hobby;    // 追加
         $kensakun->adl = $request->adl;    // 追加
         $kensakun->save();
@@ -119,8 +119,7 @@ class KensakunsController extends Controller
             'room' => 'required|max:5',   // 追加
             'sex' => 'required|max:5',   // 追加
             'content' => 'required|max:20',
-            'birth' => 'required|max:20',   // 追加
-            'age' => 'required|max:3',   // 追加
+            'birth' => 'required|max:20|date_format:"Y/m/d',   // 追加
             'hobby' => 'required|max:20',   // 追加
             'adl' => 'required|max:30',   // 追加
         ]);
@@ -130,14 +129,14 @@ class KensakunsController extends Controller
         $kensakun->sex = $request->sex;    // 追加
         $kensakun->content = $request->content;
         $kensakun->birth = $request->birth;    // 追加
-        $kensakun->age = $request->age;    // 追加
         $kensakun->hobby = $request->hobby;    // 追加
         $kensakun->adl = $request->adl;    // 追加
         $kensakun->save();
 
         return redirect('/');
     }
-
+    
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -151,4 +150,10 @@ class KensakunsController extends Controller
 
         return redirect('/');
     }
+    public function getSignOut() 
+    {
+        \Auth::logout();
+       // return Redirect('getSignOut');
+       return view('auth.register');
+   }
 }

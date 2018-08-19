@@ -68,4 +68,9 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+    public function getSignOut() 
+    {
+        Auth::logout();
+            return Redirect::route('singup');
+   }
 }

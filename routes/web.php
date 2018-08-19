@@ -25,4 +25,6 @@ Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
 // ログイン認証付きのルーティング
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('kensakuns', 'KensakunsController');
+    Route::get('getSignOut', 'KensakunsController@getSignOut')->name('getSignOut.get');
 });
+

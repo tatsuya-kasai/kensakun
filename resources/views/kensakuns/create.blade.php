@@ -25,10 +25,6 @@
                 {!! Form::text('birth', null, ['class' => 'form-control']) !!}
             </div>
             <div class="form-group">
-                {!! Form::label('age', '年齢:') !!}
-                {!! Form::text('age', null, ['class' => 'form-control']) !!}
-            </div>
-            <div class="form-group">
                 {!! Form::label('hobby', '趣味:') !!}
                 {!! Form::text('hobby', null, ['class' => 'form-control']) !!}
             </div>
