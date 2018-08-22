@@ -24,7 +24,6 @@
                             </ul>
                         </li>
                     @else
-                        <li>{!! link_to_route('signup.get', '管理者登録') !!}</li>
                         <li>{!! link_to_route('login', 'ログイン') !!}</li>
                     @endif
                 </ul>
